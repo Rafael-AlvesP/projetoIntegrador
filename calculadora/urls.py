@@ -17,11 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.http import HttpResponse
+from calculator.views import home, contato, sobre
 
 def my_view(request):
     return HttpResponse('Uma linda String')
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("sobre/", my_view)
+    path('', home),
+    path('contato/', contato ),
+    path('sobre/', sobre),
 ]
